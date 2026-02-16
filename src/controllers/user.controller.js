@@ -80,7 +80,7 @@ const loginUser = asyncHandler(async(req,res)=>{
         throw new ApiError(401,"Password is incorrect")
     }
 
-    const{accessToken,refreshToken} = generateAccessAndRefreshToken(user._id);
+    const{accessToken,refreshToken} = await generateAccessAndRefreshToken(user._id);
 
     const login = await User.findById(user._id).select("-password -refreshToken")
     const options = {
