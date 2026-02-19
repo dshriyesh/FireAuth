@@ -12,6 +12,8 @@ connectDB()
 })
 
 
+
+
 app.get('/', (req, res) => {
     res.send("this is home page")
 })
